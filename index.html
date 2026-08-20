@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>ROCK OUTDOOR CAMP | Выезд на Силикатные озёра</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Russo+One&family=Oswald:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #e0e0e0;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ff0000, #cc0000, #ff4444);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        h1 { font-family: 'Russo One', sans-serif; font-size: 4rem; font-weight: 400; line-height: 1.1; letter-spacing: 1px; }
+        h2 { font-family: 'Russo One', sans-serif; font-size: 2.2rem; font-weight: 400; margin-bottom: 1.5rem; border-left: 5px solid #cc0000; padding-left: 20px; }
+        h3 { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.8rem; }
+        .btn {
+            display: inline-block;
+            background: #cc0000;
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            font-weight: 400;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            padding: 14px 40px;
+            border-radius: 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .btn:hover { background: #ff0000; transform: scale(1.02); letter-spacing: 3px; }
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 80px 0; border-bottom: 1px solid rgba(204,0,0,0.3); }
+        .navbar {
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 2px solid #cc0000;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            color: #cc0000;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: #cc0000; }
+        .btn-nav { padding: 6px 20px; font-size: 1rem; }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            padding-bottom: 60px;
+            background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=2070&auto=format') center/cover fixed;
+        }
+        .hero-badge {
+            background: rgba(204,0,0,0.2);
+            padding: 8px 20px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 20px;
+            border-left: 3px solid #cc0000;
+        }
+        .hero-content { max-width: 800px; }
+        .hero-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .hero-details i { color: #cc0000; margin-right: 10px; }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .card {
+            background: rgba(10,10,10,0.85);
+            backdrop-filter: blur(2px);
+            padding: 30px;
+            border: 1px solid rgba(204,0,0,0.3);
+            transition: all 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); border-color: #cc0000; box-shadow: 0 20px 40px rgba(204,0,0,0.2); }
+        .tariff-card { text-align: center; }
+        .tariff-price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            color: #cc0000;
+            margin: 20px 0;
+        }
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(204,0,0,0.05);
+            border-left: 4px solid #cc0000;
+            transition: 0.2s;
+        }
+        .timeline-item:hover { background: rgba(204,0,0,0.1); transform: translateX(10px); }
+        .timeline-time {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            min-width: 200px;
+            color: #cc0000;
+        }
+        .map { overflow: hidden; margin-top: 30px; border: 2px solid #cc0000; }
+        iframe { width: 100%; border: 0; }
+        footer {
+            background: rgba(0,0,0,0.8);
+            padding: 50px 0 30px;
+            text-align: center;
+            color: #888;
+            border-top: 2px solid #cc0000;
+            margin-top: 30px;
+        }
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+        .social-links a:hover { color: #cc0000; }
+        .contact-phones {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #cc0000;
+            background: #1a1a1a;
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 3px solid #cc0000;
+        }
+        .what-to-take {
+            list-style: none;
+            padding: 0;
+        }
+        .what-to-take li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(204,0,0,0.2);
+            font-family: 'Inter', sans-serif;
+        }
+        .what-to-take li:last-child { border-bottom: none; }
+        .what-to-take i {
+            color: #cc0000;
+            margin-right: 12px;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.6rem; }
+            section { padding: 50px 0; }
+            .hero { padding-top: 120px; padding-bottom: 40px; min-height: auto; }
+            .nav-container { flex-direction: column; }
+            .nav-links { justify-content: center; gap: 12px; }
+            .nav-links a { font-size: 0.8rem; }
+            .timeline-item { flex-direction: column; gap: 8px; }
+            .timeline-time { min-width: auto; }
+            .btn { padding: 10px 25px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎸 ROCK CAMP</div>
+            <div class="nav-links">
+                <a href="#about">О ВЫЕЗДЕ</a>
+                <a href="#price">СТОИМОСТЬ</a>
+                <a href="#who">УЧАСТНИКИ</a>
+                <a href="#program">ПРОГРАММА</a>
+                <a href="#contact">ЗАПИСЬ</a>
+                <a href="#booking" class="btn btn-nav" id="navBookingBtn">ЗАПИСАТЬСЯ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== БЛОК 1. ГЛАВНЫЙ ЭКРАН ===== -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">🔥 ВЫЕЗД НА СИЛИКАТНЫЕ ОЗЁРА</div>
+                <h1>ROCK<br><span class="gradient-text">OUTDOOR CAMP</span></h1>
+                <p style="font-size: 1.2rem; margin: 20px 0 10px;">Сентябрь. Лес. Озёра. Музыка. Сплочение.</p>
+                <div class="hero-details">
+                    <div><i class="fas fa-calendar-alt"></i> <strong>Сентябрь 2026</strong><br>10:00 – 19:00</div>
+                    <div><i class="fas fa-map-marker-alt"></i> <strong>Силикатные озёра</strong><br>Липецкая область</div>
+                    <div><i class="fas fa-users"></i> <strong>Ученики 10–18 лет</strong><br>+ родители</div>
+                </div>
+                <button class="btn" id="heroBookingBtn">🎤 ЗАПИСАТЬСЯ →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 2. О МЕРОПРИЯТИИ ===== -->
+    <section id="about">
+        <div class="container">
+            <h2>🌲 О ВЫЕЗДЕ</h2>
+            <div class="card" style="margin-bottom: 30px;">
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">Однодневный выезд для учеников Школы рока (10–18 лет) и их родителей.</p>
+                <div class="grid-2" style="margin-top: 20px;">
+                    <div>
+                        <h3>📅 Детали</h3>
+                        <p><strong>Дата:</strong> Сентябрь 2026</p>
+                        <p><strong>Время:</strong> 10:00 – 19:00</p>
+                        <p><strong>Локация:</strong> Силикатные озёра + лес</p>
+                    </div>
+                    <div>
+                        <h3>🎯 Главная цель</h3>
+                        <p>Узнать планы школы на год, познакомиться, сплотиться и классно провести время в кругу единомышленников.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item"><div class="timeline-time">🎮 ИГРЫ НА СПЛОЧЕНИЕ</div><div>Разогрев, знакомство, командный дух.</div></div>
+                <div class="timeline-item"><div class="timeline-time">🧩 СТАНЦИОННАЯ ИГРА</div><div>Команды проходят станции с заданиями.</div></div>
+                <div class="timeline-item"><div class="timeline-time">🎤 МАСТЕР-КЛАССЫ</div><div>Вокал, клавиши, театр, блогинг.</div></div>
+                <div class="timeline-item"><div class="timeline-time">🗺️ КВЕСТ В ЛЕСУ</div><div>«Найди клад» — приключение для всех.</div></div>
+                <div class="timeline-item"><div class="timeline-time">🔥 АКУСТИЧЕСКИЙ ДЖЕМ</div><div>Песни у костра под гитару.</div></div>
+                <div class="timeline-item"><div class="timeline-time">📢 АНОНС ШКОЛЫ</div><div>Планы на год, новые проекты.</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 3. СТОИМОСТЬ ===== -->
+    <section id="price">
+        <div class="container">
+            <h2>💰 СТОИМОСТЬ</h2>
+            <div class="card" style="text-align: center; max-width: 500px; margin: 0 auto;">
+                <div class="tariff-price" style="font-size: 3rem;">2 500 ₽</div>
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">с человека</p>
+                <p style="text-align: left;"><i class="fas fa-check" style="color: #cc0000;"></i> Участие во всех активностях</p>
+                <p style="text-align: left;"><i class="fas fa-check" style="color: #cc0000;"></i> Мастер-классы от преподавателей</p>
+                <p style="text-align: left;"><i class="fas fa-check" style="color: #cc0000;"></i> Горячий чай и печенье</p>
+                <p style="text-align: left;"><i class="fas fa-check" style="color: #cc0000;"></i> Реквизит для игр и квеста</p>
+                <p style="text-align: left;"><i class="fas fa-check" style="color: #cc0000;"></i> Организация и сопровождение</p>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <div class="hero-badge" style="display: inline-block;">⚠️ КОЛИЧЕСТВО МЕСТ ОГРАНИЧЕНО</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 4. КТО МОЖЕТ УЧАСТВОВАТЬ ===== -->
+    <section id="who">
+        <div class="container">
+            <h2>👥 КТО МОЖЕТ УЧАСТВОВАТЬ</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>🎸 Участники</h3>
+                    <p style="font-size: 1.2rem;">Ученики Школы рока от <strong>10 до 18 лет</strong></p>
+                </div>
+                <div class="card">
+                    <h3>👨‍👩‍👧‍👦 Сопровождение</h3>
+                    <p style="font-size: 1.2rem;"><strong>1 родитель</strong> (или официальный представитель) на каждого участника — обязательно</p>
+                </div>
+                <div class="card">
+                    <h3>➕ Гости</h3>
+                    <p style="font-size: 1.2rem;">Можно взять с собой до <strong>3-х гостей</strong>, не являющихся учениками школы (друзья, братья/сёстры, знакомые).<br>Стоимость для них — та же.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 5. ЧТО ВЗЯТЬ С СОБОЙ ===== -->
+    <section id="take">
+        <div class="container">
+            <h2>🎒 ЧТО ВЗЯТЬ С СОБОЙ</h2>
+            <div class="card">
+                <ul class="what-to-take">
+                    <li><i class="fas fa-utensils"></i> Обед / пикник (родители кормят своих детей)</li>
+                    <li><i class="fas fa-tshirt"></i> Удобную одежду и обувь по погоде</li>
+                    <li><i class="fas fa-guitar"></i> Гитару или другой инструмент (по желанию)</li>
+                    <li><i class="fas fa-smile"></i> Хорошее настроение</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 6. ВАЖНАЯ ИНФОРМАЦИЯ ===== -->
+    <section id="info">
+        <div class="container">
+            <h2>⚠️ ВАЖНАЯ ИНФОРМАЦИЯ</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>👨‍👩‍👧 Для родителей</h3>
+                    <p>Родители обязаны присутствовать на протяжении всего мероприятия. Вы привозите детей, находитесь рядом, кормите обедом и увозите обратно.</p>
+                </div>
+                <div class="card">
+                    <h3>🏫 От школы</h3>
+                    <p>Организация, чай, игры, мастер-классы, джем, реквизит.</p>
+                </div>
+                <div class="card" style="grid-column: 1 / -1;">
+                    <h3>🛡️ Безопасность</h3>
+                    <p>Маршруты и зоны размечены, всё под контролем организаторов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 7. КАК ЗАПИСАТЬСЯ ===== -->
+    <section id="contact">
+        <div class="container">
+            <h2>📞 КАК ЗАПИСАТЬСЯ</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>📱 Контакты</h3>
+                    <p style="font-size: 1.2rem;"><i class="fas fa-phone" style="color: #cc0000;"></i> Телефон / WhatsApp: <strong>+7 (960) 140-14-45</strong></p>
+                    <p style="margin-top: 10px;">Для записи напишите: <strong>ФИО участника, возраст, контакт родителей.</strong></p>
+                    <div class="contact-phones" style="margin-top: 15px;">
+                        <strong>📱 +7 (960) 140-14-45</strong><br>
+                        <strong>📱 +7 (904) 693-53-35</strong>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>⏳ Дедлайн</h3>
+                    <p style="font-size: 1.2rem;">Количество мест ограничено. Успейте записаться!</p>
+                    <button class="btn" id="contactBookingBtn" style="margin-top: 20px; width: 100%;">ЗАПИСАТЬСЯ →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 8. МЕСТО ПРОВЕДЕНИЯ ===== -->
+    <section id="location">
+        <div class="container">
+            <h2>📍 МЕСТО ПРОВЕДЕНИЯ</h2>
+            <div class="grid-2">
+                <div>
+                    <h3>Силикатные озёра</h3>
+                    <p><i class="fas fa-map-pin" style="color: #cc0000;"></i> Липецкая область, Силикатные озёра</p>
+                    <p style="margin-top: 20px;">Лес, озёра, чистый воздух — идеальное место для выезда на природе.</p>
+                </div>
+                <div class="map">
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1f3b5c5f5a2d9f2e8f3b8c9d7e6f5a4b3c2d1e0f1a2b3c4d5e6f7a8b9c0d1e2f3&source=constructor" width="100%" height="250" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://vk.com/id38195847" target="_blank"><i class="fab fa-vk"></i></a>
+            </div>
+            <p>© 2026 ROCK OUTDOOR CAMP | <a href="https://vk.com/id38195847" target="_blank" style="color: #cc0000;">ОРГАНИЗАТОР</a></p>
+            <p style="margin-top: 8px;">📍 Силикатные озёра, Липецкая область</p>
+            <p style="margin-top: 8px;">📱 +7 (960) 140-14-45 | +7 (904) 693-53-35</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== БРОНИРОВАНИЕ (ВК С СООБЩЕНИЕМ) =====
+        const phoneNumber = '+7 (960) 140-14-45';
+        
+        function sendBooking() {
+            let msg = `🎸 ЗАЯВКА НА ROCK OUTDOOR CAMP 🎸\n\n`;
+            msg += `Дата: Сентябрь 2026\n`;
+            msg += `Время: 10:00–19:00\n`;
+            msg += `Место: Силикатные озёра\n`;
+            msg += `Стоимость: 2500 ₽ с человека\n\n`;
+            msg += `Для записи напишите: ФИО участника, возраст, контакт родителей.`;
+            window.open(`https://vk.com/im?sel=38195847&text=${encodeURIComponent(msg)}`, '_blank');
+        }
+        
+        document.getElementById('heroBookingBtn').addEventListener('click', sendBooking);
+        document.getElementById('navBookingBtn').addEventListener('click', (e) => { e.preventDefault(); sendBooking(); });
+        document.getElementById('contactBookingBtn').addEventListener('click', sendBooking);
+        
+        // ===== ПЛАВНАЯ ПРОКРУТКА =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+    </script>
+</body>
+</html>
