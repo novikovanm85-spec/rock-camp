@@ -194,6 +194,13 @@
             color: #cc0000;
             margin-right: 12px;
         }
+        .highlight-box {
+            background: rgba(204,0,0,0.08);
+            border-left: 4px solid #cc0000;
+            padding: 16px 20px;
+            margin-top: 15px;
+            font-size: 1rem;
+        }
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             h2 { font-size: 1.6rem; }
@@ -293,7 +300,7 @@
         </div>
     </section>
 
-    <!-- ===== БЛОК 5. ЧТО ВЗЯТЬ С СОБОЙ (изменено: еда / напитки вместо обед/пикник/вода) ===== -->
+    <!-- ===== БЛОК 5. ЧТО ВЗЯТЬ С СОБОЙ ===== -->
     <section id="take">
         <div class="container">
             <h2>🎒 ЧТО ВЗЯТЬ С СОБОЙ</h2>
@@ -325,25 +332,40 @@
         </div>
     </section>
 
-    <!-- ===== БЛОК 7. КАК ЗАПИСАТЬСЯ (убрано /WhatsApp, дедлайн изменён) ===== -->
+    <!-- ===== БЛОК 7. КАК ЗАПИСАТЬСЯ (3 окошка: контакты, дедлайн, важное примечание) ===== -->
     <section id="contact">
         <div class="container">
             <h2>📞 КАК ЗАПИСАТЬСЯ</h2>
-            <div class="grid-2">
+            <div class="grid-3">
+                <!-- Карточка 1: Контакты -->
                 <div class="card">
                     <h3>📱 Контакты</h3>
-                    <p style="font-size: 1.2rem;"><i class="fas fa-phone" style="color: #cc0000;"></i> Телефон: <strong>+7 (960) 140-14-45</strong></p>
-                    <p style="margin-top: 10px;">Для записи напишите: <strong>ФИО участника, возраст, контакт родителей.</strong></p>
-                    <div class="contact-phones" style="margin-top: 15px;">
+                    <p style="font-size: 1.1rem;"><i class="fas fa-phone" style="color: #cc0000;"></i> <strong>+7 (960) 140-14-45</strong></p>
+                    <p style="margin-top: 6px;">Для записи напишите в Telegram / VK</p>
+                    <div class="contact-phones" style="margin-top: 12px;">
                         <strong>📱 +7 (960) 140-14-45</strong><br>
                         <strong>📱 +7 (904) 693-53-35</strong>
                     </div>
                 </div>
+
+                <!-- Карточка 2: Дедлайн -->
                 <div class="card">
                     <h3>⏳ Дедлайн</h3>
-                    <p style="font-size: 1.2rem;"><strong>Запись до 9 сентября</strong></p>
+                    <p style="font-size: 1.3rem;"><strong>Запись до 9 сентября</strong></p>
                     <p style="margin-top: 10px;">Количество мест ограничено. Успейте записаться!</p>
                     <button class="btn" id="contactBookingBtn" style="margin-top: 20px; width: 100%;">ЗАПИСАТЬСЯ →</button>
+                </div>
+
+                <!-- Карточка 3: Важное примечание (третье окошко) -->
+                <div class="card">
+                    <h3>📝 При записи укажите</h3>
+                    <div class="highlight-box">
+                        <i class="fas fa-pencil-alt" style="color: #cc0000; margin-right: 10px;"></i>
+                        <strong>ФИО ученика Школы Рока</strong> и <strong>сколько людей с ним будет</strong> (включая сопровождающих и гостей).
+                    </div>
+                    <p style="margin-top: 14px; font-size: 0.95rem; color: #aaa;">
+                        Это поможет нам подготовиться и учесть всех участников.
+                    </p>
                 </div>
             </div>
         </div>
@@ -368,12 +390,11 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER (добавлен второй значок VK + ссылка на школу рока) ===== -->
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
             <div class="social-links">
                 <a href="https://vk.com/id38195847" target="_blank"><i class="fab fa-vk"></i></a>
-                <!-- ВТОРОЙ ЗНАЧОК VK → ссылка на школу рока https://vk.ru/rss48 -->
                 <a href="https://vk.ru/rss48" target="_blank"><i class="fab fa-vk"></i></a>
             </div>
             <p>© 2026 Пикник Школы Рока | <a href="https://vk.ru/rss48" target="_blank" style="color: #cc0000;">ШКОЛА РОКА</a></p>
@@ -390,6 +411,7 @@
             msg += `Время: 10:00–19:00\n`;
             msg += `Место: Силикатные озёра\n`;
             msg += `Стоимость: 2000 ₽ с человека\n\n`;
+            msg += `При записи укажите ФИО ученика Школы Рока и сколько людей с ним будет.\n\n`;
             msg += `Для записи напишите: ФИО участника, возраст, контакт родителей.`;
             window.open(`https://vk.com/im?sel=38195847&text=${encodeURIComponent(msg)}`, '_blank');
         }
